@@ -11,6 +11,17 @@ import Link from 'next/link';
 import matter from 'gray-matter';
 import fs from 'fs';
 
+const getWeather =  async () => {
+  const appid = 'Your AppId on OpenWeatherMap';
+  
+  try {
+    const weather = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Osaka&appid=`+appid+`&lang=ja&units=metric`)
+        .then(data => data.json())
+    return weather;
+  } catch (e) {
+    return [];
+  }
+}
 
 export const getServerSideProps = async () => {
   const files = fs.readdirSync('posts');
@@ -25,26 +36,13 @@ export const getServerSideProps = async () => {
   });
 
   //ForecastAPI
-  const appid = 'Your OpenWeatherMap AppId here';
-  
+  const weather = await getWeather();
 
-  try {
-    const weather = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Osaka&appid=`+appid+`&lang=ja&units=metric`)
-        .then(data => data.json())
-    return {
-        props: {
-            weather,
-            posts,
-        }
+  return {
+    props: {
+      weather,
+      posts,
     }
-  } catch (e) {
-      console.log(e)
-      return {
-          props: {
-              weather: [],
-              posts,
-          }
-      }
   }
 };
 
