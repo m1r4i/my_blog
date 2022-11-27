@@ -4,10 +4,24 @@ import ReactMarkdown from 'react-markdown';
 
 
 
-export async function getServerSideProps({ params }) {
+export async function getStaticProps({ params }) {
   const file = fs.readFileSync(`posts/${params.id}.md`, 'utf-8');
   const { data, content } = matter(file);
   return { props: { frontMatter: data, content } };
+}
+
+export async function getStaticPaths() {
+  const files = fs.readdirSync('posts');
+  const paths = files.map((fileName) => ({
+    params: {
+      id: fileName.replace(/\.md$/, ''),
+    },
+  }));
+  console.log('paths:', paths);
+  return {
+    paths,
+    fallback: false,
+  };
 }
 
 const Post = ({ frontMatter, content }) => {

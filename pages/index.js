@@ -3,7 +3,6 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Post from '../components/Post';
-import Weather from '../components/Weather';
 
 
 //Loading modules
@@ -11,19 +10,8 @@ import Link from 'next/link';
 import matter from 'gray-matter';
 import fs from 'fs';
 
-const getWeather =  async () => {
-  const appid = 'Your AppId on OpenWeatherMap';
-  
-  try {
-    const weather = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Osaka&appid=`+appid+`&lang=ja&units=metric`)
-        .then(data => data.json())
-    return weather;
-  } catch (e) {
-    return [];
-  }
-}
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const files = fs.readdirSync('posts');
   const posts = files.map((fileName) => {
     const slug = fileName.replace(/\.md$/, '');
@@ -35,15 +23,15 @@ export const getServerSideProps = async () => {
     };
   });
 
-  //ForecastAPI
-  const weather = await getWeather();
+  const sortedPosts = posts.sort((postA, postB) =>
+    new Date(postA.frontMatter.date) > new Date(postB.frontMatter.date) ? -1 : 1
+  );
 
   return {
     props: {
-      weather,
-      posts,
-    }
-  }
+      posts: sortedPosts,
+    },
+  };
 };
 
 function Home({ posts,weather }) {
@@ -51,9 +39,6 @@ function Home({ posts,weather }) {
     <div className="bg-white py-12 lg:py-10">
       <div className="mx-auto max-w-full px-6 lg:px-8">
         <div className="grid grid-rows-3 grid-flow-col gap-4">
-
-          <Weather weather={weather} />
-
           {posts.map((post) => (
             <Post key={post.slug} post={post} />
           ))}
