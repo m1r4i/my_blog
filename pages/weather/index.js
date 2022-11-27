@@ -6,8 +6,6 @@ import styles from '../../styles/Home.module.css'
 
 //Loading modules
 import Link from 'next/link';
-import matter from 'gray-matter';
-import fs from 'fs';
 
 const getWeather =  async () => {
     const appid = '2588f91a996499bdc1a245173fd6f567';
