@@ -8,8 +8,7 @@ import styles from '../../styles/Home.module.css'
 import Link from 'next/link';
 
 const getWeather =  async () => {
-    const appid = '2588f91a996499bdc1a245173fd6f567';
-  
+    const appid = 'TOKEN HERE'
     try {
       const weather = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Sayama&appid=`+appid+`&lang=ja&units=metric`)
           .then(data => data.json())
