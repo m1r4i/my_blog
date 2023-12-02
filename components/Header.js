@@ -7,9 +7,6 @@ const Header = () => {
         <Link href="/">
           スーパーみらい
         </Link>
-        <Link href="/weather">
-          <div>お天気(みずおか)</div>
-        </Link>
       </div>
     </header>
   );
