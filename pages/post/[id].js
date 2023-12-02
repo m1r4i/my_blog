@@ -1,6 +1,7 @@
 import fs from 'fs';
 import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 
 
@@ -33,7 +34,7 @@ const Post = ({ frontMatter, content }) => {
               <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{frontMatter.title}</p>
               <p className="mx-auto mt-1 max-w-2xl text-lg leading-8 text-gray-600">{frontMatter.date}</p>
               <div className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-left">
-                <ReactMarkdown>{content}</ReactMarkdown>
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
               </div>
             </div>
           </div>
