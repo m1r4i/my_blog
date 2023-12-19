@@ -1,7 +1,7 @@
 ---
 title: '大規模企画とConoHaとMinecraftサーバーの話'
 date: '2023-12-09'
-category: '2023年 ConoHa AdventCalendar 19日目'
+category: '2023年 ConoHa AdventCalendar 9日目'
 smallTalk: '過去の苦労話'
 ---
 
