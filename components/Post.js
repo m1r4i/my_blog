@@ -2,18 +2,31 @@ import Link from 'next/link';
 
 const PostCard = ({ post }) => {
   return (
-    <div className="row-start-1 row-end-4">
-    <div className="max-w-md py-4 px-8 bg-white shadow-lg rounded-lg my-20">
+    <div className="h-full flex flex-col justify-between bg-white shadow-lg rounded-lg p-6 transition hover:shadow-xl">
       <div>
-        <h2 className="text-gray-800 text-3xl font-semibold">{post.frontMatter.title} - <small>{post.frontMatter.date}</small></h2>
-        <p className="mt-2 text-gray-600"><span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">{post.frontMatter.category}</span></p>
-        <p className="mt-2 text-gray-600">{post.frontMatter.smallTalk}</p>
+        <h2 className="text-gray-800 text-xl font-semibold mb-2">
+          {post.frontMatter.title}
+        </h2>
+        <small className="text-gray-500 text-sm block mb-1">
+          {post.frontMatter.date}
+        </small>
+        <p className="text-sm text-blue-800 bg-blue-100 inline-block px-2 py-0.5 rounded font-medium mb-2">
+          {post.frontMatter.category}
+        </p>
+        <p className="text-gray-600 text-sm">
+          {post.frontMatter.smallTalk}
+        </p>
       </div>
-      <div className="flex justify-end mt-4">
-      <Link href={`/post/${post.slug}`} className="text-xl font-medium text-indigo-500">読む</Link>
+      <div className="mt-4 text-right">
+        <Link
+          href={`/post/${post.slug}`}
+          scroll={false}
+          className="text-indigo-500 hover:text-indigo-700 font-medium"
+        >
+          読む →
+        </Link>
       </div>
     </div>
-  </div>
   );
 };
 
