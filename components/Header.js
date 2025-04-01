@@ -15,7 +15,7 @@ const Header = () => {
 
         {/* ナビゲーション */}
         <header className="sticky top-0 left-0 transform z-10 w-full px-6 py-3 border border-white/20 bg-white/60 backdrop-blur-sm shadow-lg flex justify-between items-center">
-          <Link href="/" legacyBehavior>
+          <Link href="/" scroll={false} legacyBehavior>
             <a className="text-black text-xl font-bold tracking-wide hover:text-black-200 transition">
               About me, Mirai.
             </a>
