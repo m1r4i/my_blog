@@ -9,7 +9,7 @@ const Awards = () => {
             <h2 className="text-2xl font-semibold mb-4">🏆 Awards</h2>
             <ul className="space-y-3">
                 <li>🏆 Indie Games Contest 学生選手権2024 優秀賞 - コナミデジタルエンターテイメント</li>
-                <li>🏆 ゲームクリエイター甲子園2024 優秀賞 佳作 - ゲームクリエイターズギルド</li>
+                <li>🏆 ゲームクリエイター甲子園2024 総合賞 佳作 - ゲームクリエイターズギルド</li>
                 <li>🏆 ゲームクリエイター甲子園2024 宮田大介賞 - ゲームクリエイターズギルド</li>
                 <li>🏆 ゲームクリエイター甲子園2024 インテルⓇ Blue Carpet Project賞 - ゲームクリエイターズギルド</li>
                 <li>🏆 2024年度 Switch2Dゲーム学内コンテスト 意欲賞 - HAL大阪</li>
