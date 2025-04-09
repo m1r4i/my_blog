@@ -26,19 +26,26 @@ export async function getStaticPaths() {
 }
 
 const Work = ({ frontMatter, content }) => {
-    return (
-        <div className="bg-white py-12 lg:py-10">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="sm:text-center">
-              <h2 className="text-lg font-semibold leading-8 text-indigo-600">{frontMatter.category}</h2>
-              <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{frontMatter.title}</p>
-              <p className="mx-auto mt-1 max-w-2xl text-lg leading-8 text-gray-600">{frontMatter.date}</p>
-              <div className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-left">
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
-              </div>
+  return (
+    <>
+      <Head>
+        <title>{frontMatter.title} | About me, Mirai.</title>
+      </Head>
+
+      <div className="bg-white py-12 lg:py-10">
+        <div className="mx-auto max-w-7xl px-3 lg:px-4">
+          <div className="sm:text-center">
+            <h2 className="text-lg font-semibold leading-8 text-indigo-600">{frontMatter.category}</h2>
+            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{frontMatter.title}</p>
+            <p className="mx-auto mt-1 max-w-2xl text-lg leading-8 text-gray-600">{frontMatter.date}</p>
+            <div className="mx-auto mt-6 max-w-4xl text-lg leading-8 text-left">
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
             </div>
           </div>
         </div>
-      )};
+      </div>
+    </>
+  )
+};
 
 export default Work;
