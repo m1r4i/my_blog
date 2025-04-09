@@ -1,4 +1,5 @@
 import fs from 'fs';
+import Head from 'next/head';
 import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
