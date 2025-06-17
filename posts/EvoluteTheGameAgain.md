@@ -1,5 +1,5 @@
 ---
-title: '入院してた話'
+title: '神エボ2次残った話'
 date: '2025-06-17'
 category: 'コンテスト'
 smallTalk: '神エボ2周目'
