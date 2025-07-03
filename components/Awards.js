@@ -19,6 +19,7 @@ const Awards = () => {
             <hr className="mt-5 mb-5" />
             <h2 className="text-2xl font-semibold mb-4">📘 Certifications</h2>
             <ul className="space-y-3">
+                <li>📘 ネットワークスペシャリスト試験 - 独立行政法人 情報処理推進機構</li>
                 <li>📘 応用情報技術者試験 - 独立行政法人 情報処理推進機構</li>
                 <li>📘 Webデザイナー検定エキスパート - 公益財団法人 画像情報教育振興協会</li>
                 <li>📘 CGクリエイター検定ベーシック - 公益財団法人 画像情報教育振興協会</li>
