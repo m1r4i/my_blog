@@ -16,3 +16,4 @@ smallTalk: '他のサイトに散らばっている記事をまとめました�
 
 # note
 - 【空柳学園】C105を振り返って メイドを添えて: <https://note.com/m1r/n/n423698de6f1f>
+- ネットワークスペシャリスト試験の合格記: <https://note.com/m1r/n/n84dc506729aa>  
